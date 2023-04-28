@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 해결책1: after를 이용한 빈 가상 선택자를 만들고 block, clear:both 적용
+        .container1::after {
+            content: '';
+            display: block;
+            clear: both;
+        } */
+
+        .container1 {
+            width: 700px;
+            padding: 20px;
+            border: 3px solid red;
+            /* 해결책2
+            overflow: hidden; */
+        }
+
+        .box {
+            width: 200px;
+            height: 100px;
+            border: 3px solid green;
+            background-color: yellowgreen;
+            border-radius: 20px;
+            float: left;
+        }
+
+        /* 해결책3: vbox에 clear:both
+        .vbox {
+            clear: both;
+        } */
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <!-- 용도는 없지만 float 해제 목적   -->
+        <div class="vbox"></div>
+    </div>
+</body>
+
+</html>
